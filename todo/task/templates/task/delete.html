@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Confirmation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f6c5c5; /* Light Gray */
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 400px;
+            margin: 50px auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            text-align: center;
+        }
+        p {
+            font-size: 18px;
+            margin-bottom: 20px;
+            font-weight: bold;
+            padding: 10px;
+            background-color: #e0e0e0; /* Light Gray */
+            border-radius: 8px;
+        }
+        a, input[type="submit"] {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            display: inline-block;
+        }
+        a {
+            background-color: #007bff; /* Blue */
+            color: #fff;
+            margin-right: 10px;
+        }
+        input[type="submit"] {
+            background-color: #dc3545; /* Red */
+            color: #fff;
+        }
+        a:hover, input[type="submit"]:hover {
+            background-color: #0056b3; /* Darker Blue */
+        }
+        .btn-container {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p>Are you sure you want to delete "{{item}}"?</p>
+        <div class="btn-container">
+            <a href="/">Cancel</a>
+            <form method="POST" action="">
+                {% csrf_token %}
+                <input type="submit" value="Confirm">
+            </form>
+        </div>
+    </div>
+</body>
+</html>

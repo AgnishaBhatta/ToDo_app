@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #a5d0fc; /* Blue */
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 400px;
+            margin: 20px auto;
+            background-color: #d5d8cc;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+        }
+        h3 {
+            text-align: center;
+            color: #000000; /* Black */
+            margin-bottom: 20px;
+            font-size: 24px;
+            padding: 10px;
+            background-color: #ed5050; /* Light Gray */
+            border-radius: 8px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        input[type="text"],
+        input[type="submit"] {
+            width: calc(100% - 20px);
+            padding: 12px;
+            border-radius: 6px;
+            border: 2px solid #030507;
+            margin-bottom: 20px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+        input[type="submit"] {
+            background-color: #28a745; /* Green */
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        input[type="submit"]:hover {
+            background-color: #218838; /* Dark Green */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3>Update Task</h3>
+        <form method="POST" action="">
+            {% csrf_token %}
+            {{form}}
+            <input type="submit" value="Update">
+        </form>
+    </div>
+</body>
+</html>
